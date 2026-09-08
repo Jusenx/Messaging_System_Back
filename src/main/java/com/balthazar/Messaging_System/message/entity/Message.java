@@ -7,12 +7,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class Message {
 
     @Id
@@ -21,7 +23,7 @@ public class Message {
 
     private String title;
     private String description;
-    private final ProviderEnum provider;
+    private ProviderEnum provider;
 
     @Setter
     private StatusEnum status;
@@ -31,5 +33,4 @@ public class Message {
         this.description = description;
         this.provider = provider;
     }
-
 }
