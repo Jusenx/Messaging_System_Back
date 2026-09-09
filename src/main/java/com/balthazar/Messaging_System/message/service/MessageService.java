@@ -25,7 +25,7 @@ public class MessageService {
         Message message = mapper.toEntity(request);
         message.setStatus(StatusEnum.PENDING);
         Message savedMessage = repository.save(message);
-
+        factory.getProvider(savedMessage).send(savedMessage);
         return mapper.toResponse(savedMessage);
 
     }
