@@ -30,13 +30,13 @@ public class SmsProvider implements MessageProvider {
 
         com.twilio.rest.api.v2010.account.Message twilioMessage =
                 com.twilio.rest.api.v2010.account.Message.creator(
-                        new PhoneNumber(""), // toPhone
+                        new PhoneNumber(message.getSendTo()),
                         new PhoneNumber(fromPhone),
                         message.getDescription()
                 ).create();
 
         System.out.println(
-                "SMS enviado! SID: " + twilioMessage.getSid()
+                "Enviando SMS: " + twilioMessage.getSid()
         );
     }
 }
