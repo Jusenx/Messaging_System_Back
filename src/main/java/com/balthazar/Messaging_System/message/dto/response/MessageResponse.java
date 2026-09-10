@@ -5,6 +5,7 @@ import com.balthazar.Messaging_System.message.enums.ProviderEnum;
 public record MessageResponse(
         String title,
         String description,
+        String sendTo,
         ProviderEnum provider
 ) {
 }

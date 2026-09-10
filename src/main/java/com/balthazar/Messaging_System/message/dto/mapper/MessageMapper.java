@@ -12,6 +12,7 @@ public class MessageMapper {
         return new Message(
                 request.title(),
                 request.description(),
+                request.sendTo(),
                 request.provider()
         );
     }
@@ -20,6 +21,7 @@ public class MessageMapper {
         return new MessageResponse(
                 message.getTitle(),
                 message.getDescription(),
+                message.getSendTo(),
                 message.getProvider()
         );
     }

@@ -23,14 +23,16 @@ public class Message {
 
     private String title;
     private String description;
+    private String sendTo;
     private ProviderEnum provider;
 
     @Setter
     private StatusEnum status;
 
-    public Message(String title, String description, ProviderEnum provider) {
+    public Message(String title, String description, String sendTo, ProviderEnum provider) {
         this.title = title;
         this.description = description;
+        this.sendTo = sendTo;
         this.provider = provider;
     }
 }
